@@ -128,9 +128,9 @@
 			children = (
 				3B94D30127A1DAD000C148EB /* AppDelegate.swift */,
 				3B94D30327A1DAD000C148EB /* SceneDelegate.swift */,
-				3B94D30527A1DAD000C148EB /* ViewController.swift */,
-				3B94D30D27A1DAD100C148EB /* Assets.xcassets */,
-				3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */,
+				3B94D33727A1DF5C00C148EB /* Model */,
+				3B94D33527A1DF3A00C148EB /* Modules */,
+				3B94D33627A1DF4900C148EB /* Supporting Files */,
 				3B94D31227A1DAD100C148EB /* Info.plist */,
 				3B94D30A27A1DAD000C148EB /* Guidomia.xcdatamodeld */,
 			);
@@ -152,6 +152,38 @@
 				3B94D32727A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift */,
 			);
 			path = GuidomiaUITests;
+			sourceTree = "<group>";
+		};
+		3B94D33527A1DF3A00C148EB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3B94D33827A1DF7700C148EB /* New Group */,
+				3B94D30527A1DAD000C148EB /* ViewController.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3B94D33627A1DF4900C148EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B94D30D27A1DAD100C148EB /* Assets.xcassets */,
+				3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B94D33727A1DF5C00C148EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B94D33827A1DF7700C148EB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		571295C1A18A4E0F4C04B121 /* Pods */ = {
