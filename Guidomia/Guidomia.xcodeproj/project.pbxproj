@@ -11,7 +11,7 @@
 		0D9C1A855FBBA5002700E502 /* Pods_Guidomia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB2A6C8FAAFE6974202045B /* Pods_Guidomia.framework */; };
 		3B94D30227A1DAD000C148EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30127A1DAD000C148EB /* AppDelegate.swift */; };
 		3B94D30427A1DAD000C148EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30327A1DAD000C148EB /* SceneDelegate.swift */; };
-		3B94D30627A1DAD000C148EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30527A1DAD000C148EB /* ViewController.swift */; };
+		3B94D30627A1DAD000C148EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30527A1DAD000C148EB /* HomeViewController.swift */; };
 		3B94D30C27A1DAD000C148EB /* Guidomia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30A27A1DAD000C148EB /* Guidomia.xcdatamodeld */; };
 		3B94D30E27A1DAD100C148EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D30D27A1DAD100C148EB /* Assets.xcassets */; };
 		3B94D31127A1DAD100C148EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */; };
@@ -45,7 +45,7 @@
 		3B94D2FE27A1DAD000C148EB /* Guidomia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guidomia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B94D30127A1DAD000C148EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B94D30327A1DAD000C148EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B94D30527A1DAD000C148EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B94D30527A1DAD000C148EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3B94D30B27A1DAD000C148EB /* Guidomia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guidomia.xcdatamodel; sourceTree = "<group>"; };
 		3B94D30D27A1DAD100C148EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B94D31027A1DAD100C148EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,6 +130,7 @@
 				3B94D30327A1DAD000C148EB /* SceneDelegate.swift */,
 				3B94D33727A1DF5C00C148EB /* Model */,
 				3B94D33527A1DF3A00C148EB /* Modules */,
+				3B94D33927A1E0F400C148EB /* Utilities */,
 				3B94D33627A1DF4900C148EB /* Supporting Files */,
 				3B94D31227A1DAD100C148EB /* Info.plist */,
 				3B94D30A27A1DAD000C148EB /* Guidomia.xcdatamodeld */,
@@ -157,8 +158,7 @@
 		3B94D33527A1DF3A00C148EB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				3B94D33827A1DF7700C148EB /* New Group */,
-				3B94D30527A1DAD000C148EB /* ViewController.swift */,
+				3B94D33827A1DF7700C148EB /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -179,7 +179,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3B94D33827A1DF7700C148EB /* New Group */ = {
+		3B94D33827A1DF7700C148EB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B94D30527A1DAD000C148EB /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3B94D33927A1E0F400C148EB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3B94D33A27A1E14F00C148EB /* New Group */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3B94D33A27A1E14F00C148EB /* New Group */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -457,7 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B94D30C27A1DAD000C148EB /* Guidomia.xcdatamodeld in Sources */,
-				3B94D30627A1DAD000C148EB /* ViewController.swift in Sources */,
+				3B94D30627A1DAD000C148EB /* HomeViewController.swift in Sources */,
 				3B94D30227A1DAD000C148EB /* AppDelegate.swift in Sources */,
 				3B94D30427A1DAD000C148EB /* SceneDelegate.swift in Sources */,
 			);
