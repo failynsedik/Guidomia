@@ -8,7 +8,7 @@
 import Foundation
 
 public enum JSONParser {
-	/// Parses a `.json` file into a specified data type.
+    /// Parses a `.json` file into a specified data type.
     public static func parse<T: Decodable>(resource: String, intoType _: T.Type) -> T? {
         guard let path = Bundle.main.path(forResource: resource, ofType: "json") else {
             return nil
