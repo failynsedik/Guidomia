@@ -25,6 +25,7 @@
 		3B94D34627A1E5EB00C148EB /* Mercedez_benz_GLC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34127A1E5EB00C148EB /* Mercedez_benz_GLC.jpg */; };
 		3B94D34727A1E5EB00C148EB /* Range_Rover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34227A1E5EB00C148EB /* Range_Rover.jpg */; };
 		3B94D34827A1E5EB00C148EB /* Tacoma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34327A1E5EB00C148EB /* Tacoma.jpg */; };
+		3B94D34A27A1E61200C148EB /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34927A1E61200C148EB /* car_list.json */; };
 		F3B408D4F76B69F678CF2F00 /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35B7212E4EEC209820D0BC5 /* Pods_Guidomia_GuidomiaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		3B94D34127A1E5EB00C148EB /* Mercedez_benz_GLC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mercedez_benz_GLC.jpg; sourceTree = "<group>"; };
 		3B94D34227A1E5EB00C148EB /* Range_Rover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Range_Rover.jpg; sourceTree = "<group>"; };
 		3B94D34327A1E5EB00C148EB /* Tacoma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tacoma.jpg; sourceTree = "<group>"; };
+		3B94D34927A1E61200C148EB /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		6BF172C47C64A57675D76F67 /* Pods-GuidomiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaTests.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB39A45AC688A7C3E289707 /* Pods-Guidomia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidomia.release.xcconfig"; path = "Target Support Files/Pods-Guidomia/Pods-Guidomia.release.xcconfig"; sourceTree = "<group>"; };
 		ACB2A6C8FAAFE6974202045B /* Pods_Guidomia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guidomia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +196,7 @@
 		3B94D33727A1DF5C00C148EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3B94D34927A1E61200C148EB /* car_list.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				3B94D34627A1E5EB00C148EB /* Mercedez_benz_GLC.jpg in Resources */,
 				3B94D30E27A1DAD100C148EB /* Assets.xcassets in Resources */,
 				3B94D34727A1E5EB00C148EB /* Range_Rover.jpg in Resources */,
+				3B94D34A27A1E61200C148EB /* car_list.json in Resources */,
 				3B94D34527A1E5EB00C148EB /* BMW_330i.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
