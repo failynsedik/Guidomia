@@ -12,7 +12,6 @@
 		3B94D30227A1DAD000C148EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30127A1DAD000C148EB /* AppDelegate.swift */; };
 		3B94D30427A1DAD000C148EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30327A1DAD000C148EB /* SceneDelegate.swift */; };
 		3B94D30627A1DAD000C148EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30527A1DAD000C148EB /* ViewController.swift */; };
-		3B94D30927A1DAD000C148EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D30727A1DAD000C148EB /* Main.storyboard */; };
 		3B94D30C27A1DAD000C148EB /* Guidomia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D30A27A1DAD000C148EB /* Guidomia.xcdatamodeld */; };
 		3B94D30E27A1DAD100C148EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D30D27A1DAD100C148EB /* Assets.xcassets */; };
 		3B94D31127A1DAD100C148EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */; };
@@ -47,7 +46,6 @@
 		3B94D30127A1DAD000C148EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B94D30327A1DAD000C148EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3B94D30527A1DAD000C148EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3B94D30827A1DAD000C148EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B94D30B27A1DAD000C148EB /* Guidomia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guidomia.xcdatamodel; sourceTree = "<group>"; };
 		3B94D30D27A1DAD100C148EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B94D31027A1DAD100C148EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				3B94D30127A1DAD000C148EB /* AppDelegate.swift */,
 				3B94D30327A1DAD000C148EB /* SceneDelegate.swift */,
 				3B94D30527A1DAD000C148EB /* ViewController.swift */,
-				3B94D30727A1DAD000C148EB /* Main.storyboard */,
 				3B94D30D27A1DAD100C148EB /* Assets.xcassets */,
 				3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */,
 				3B94D31227A1DAD100C148EB /* Info.plist */,
@@ -167,7 +164,6 @@
 				E0C97D75DA409C924A9AAE3E /* Pods-GuidomiaTests.debug.xcconfig */,
 				6BF172C47C64A57675D76F67 /* Pods-GuidomiaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -282,7 +278,6 @@
 			files = (
 				3B94D31127A1DAD100C148EB /* LaunchScreen.storyboard in Resources */,
 				3B94D30E27A1DAD100C148EB /* Assets.xcassets in Resources */,
-				3B94D30927A1DAD000C148EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,14 +445,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3B94D30727A1DAD000C148EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B94D30827A1DAD000C148EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -597,7 +584,6 @@
 				INFOPLIST_FILE = Guidomia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -625,7 +611,6 @@
 				INFOPLIST_FILE = Guidomia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
