@@ -18,6 +18,7 @@
 		3B94D31C27A1DAD100C148EB /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D31B27A1DAD100C148EB /* GuidomiaTests.swift */; };
 		3B94D32627A1DAD100C148EB /* GuidomiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D32527A1DAD100C148EB /* GuidomiaUITests.swift */; };
 		3B94D32827A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D32727A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift */; };
+		3B94D33C27A1E17500C148EB /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D33B27A1E17500C148EB /* UIColor+Hex.swift */; };
 		F3B408D4F76B69F678CF2F00 /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35B7212E4EEC209820D0BC5 /* Pods_Guidomia_GuidomiaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		3B94D32127A1DAD100C148EB /* GuidomiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B94D32527A1DAD100C148EB /* GuidomiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITests.swift; sourceTree = "<group>"; };
 		3B94D32727A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B94D33B27A1E17500C148EB /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BF172C47C64A57675D76F67 /* Pods-GuidomiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaTests.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB39A45AC688A7C3E289707 /* Pods-Guidomia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidomia.release.xcconfig"; path = "Target Support Files/Pods-Guidomia/Pods-Guidomia.release.xcconfig"; sourceTree = "<group>"; };
 		ACB2A6C8FAAFE6974202045B /* Pods_Guidomia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guidomia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,16 +192,17 @@
 		3B94D33927A1E0F400C148EB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				3B94D33A27A1E14F00C148EB /* New Group */,
+				3B94D33A27A1E14F00C148EB /* UIColorExtensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		3B94D33A27A1E14F00C148EB /* New Group */ = {
+		3B94D33A27A1E14F00C148EB /* UIColorExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				3B94D33B27A1E17500C148EB /* UIColor+Hex.swift */,
 			);
-			path = "New Group";
+			path = UIColorExtensions;
 			sourceTree = "<group>";
 		};
 		571295C1A18A4E0F4C04B121 /* Pods */ = {
@@ -476,6 +479,7 @@
 				3B94D30627A1DAD000C148EB /* HomeViewController.swift in Sources */,
 				3B94D30227A1DAD000C148EB /* AppDelegate.swift in Sources */,
 				3B94D30427A1DAD000C148EB /* SceneDelegate.swift in Sources */,
+				3B94D33C27A1E17500C148EB /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
