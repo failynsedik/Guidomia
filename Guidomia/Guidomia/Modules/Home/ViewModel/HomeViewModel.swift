@@ -9,6 +9,7 @@ import UIKit
 
 final class HomeViewModel {
     private let cars: [CarDTO]
+    var expandedCellRow: Int = 0
 
     init() {
         let cars: [CarDTO] = JSONParser.parse(resource: "car_list", intoType: [CarDTO].self) ?? []

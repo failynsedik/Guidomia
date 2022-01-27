@@ -54,4 +54,9 @@ extension CarDetailTableViewCell {
         carDetailView.setup(collapsedContent: collapsedContent)
         separatorView.isHidden = collapsedContent.isLastCell
     }
+
+    func setup(expandedContent: CarDetailExpandedCellContent) {
+        carDetailView.setup(expandedContent: expandedContent)
+        separatorView.isHidden = expandedContent.isLastCell
+    }
 }
