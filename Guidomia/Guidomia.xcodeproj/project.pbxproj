@@ -20,11 +20,6 @@
 		3B94D32827A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D32727A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift */; };
 		3B94D33C27A1E17500C148EB /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D33B27A1E17500C148EB /* UIColor+Hex.swift */; };
 		3B94D33E27A1E19F00C148EB /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D33D27A1E19F00C148EB /* UIColor+Palette.swift */; };
-		3B94D34427A1E5EB00C148EB /* Alpine_roadster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D33F27A1E5EB00C148EB /* Alpine_roadster.jpg */; };
-		3B94D34527A1E5EB00C148EB /* BMW_330i.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34027A1E5EB00C148EB /* BMW_330i.jpg */; };
-		3B94D34627A1E5EB00C148EB /* Mercedez_benz_GLC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34127A1E5EB00C148EB /* Mercedez_benz_GLC.jpg */; };
-		3B94D34727A1E5EB00C148EB /* Range_Rover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34227A1E5EB00C148EB /* Range_Rover.jpg */; };
-		3B94D34827A1E5EB00C148EB /* Tacoma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34327A1E5EB00C148EB /* Tacoma.jpg */; };
 		3B94D34A27A1E61200C148EB /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B94D34927A1E61200C148EB /* car_list.json */; };
 		3B94D34C27A1E75600C148EB /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D34B27A1E75600C148EB /* JSONParser.swift */; };
 		3B94D34E27A1E8B300C148EB /* CarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D34D27A1E8B300C148EB /* CarDTO.swift */; };
@@ -69,11 +64,6 @@
 		3B94D32727A1DAD100C148EB /* GuidomiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3B94D33B27A1E17500C148EB /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		3B94D33D27A1E19F00C148EB /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
-		3B94D33F27A1E5EB00C148EB /* Alpine_roadster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Alpine_roadster.jpg; sourceTree = "<group>"; };
-		3B94D34027A1E5EB00C148EB /* BMW_330i.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BMW_330i.jpg; sourceTree = "<group>"; };
-		3B94D34127A1E5EB00C148EB /* Mercedez_benz_GLC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mercedez_benz_GLC.jpg; sourceTree = "<group>"; };
-		3B94D34227A1E5EB00C148EB /* Range_Rover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Range_Rover.jpg; sourceTree = "<group>"; };
-		3B94D34327A1E5EB00C148EB /* Tacoma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tacoma.jpg; sourceTree = "<group>"; };
 		3B94D34927A1E61200C148EB /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		3B94D34B27A1E75600C148EB /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		3B94D34D27A1E8B300C148EB /* CarDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDTO.swift; sourceTree = "<group>"; };
@@ -190,11 +180,6 @@
 		3B94D33627A1DF4900C148EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B94D33F27A1E5EB00C148EB /* Alpine_roadster.jpg */,
-				3B94D34027A1E5EB00C148EB /* BMW_330i.jpg */,
-				3B94D34127A1E5EB00C148EB /* Mercedez_benz_GLC.jpg */,
-				3B94D34227A1E5EB00C148EB /* Range_Rover.jpg */,
-				3B94D34327A1E5EB00C148EB /* Tacoma.jpg */,
 				3B94D30D27A1DAD100C148EB /* Assets.xcassets */,
 				3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */,
 			);
@@ -361,14 +346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B94D34827A1E5EB00C148EB /* Tacoma.jpg in Resources */,
-				3B94D34427A1E5EB00C148EB /* Alpine_roadster.jpg in Resources */,
 				3B94D31127A1DAD100C148EB /* LaunchScreen.storyboard in Resources */,
-				3B94D34627A1E5EB00C148EB /* Mercedez_benz_GLC.jpg in Resources */,
 				3B94D30E27A1DAD100C148EB /* Assets.xcassets in Resources */,
-				3B94D34727A1E5EB00C148EB /* Range_Rover.jpg in Resources */,
 				3B94D34A27A1E61200C148EB /* car_list.json in Resources */,
-				3B94D34527A1E5EB00C148EB /* BMW_330i.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
