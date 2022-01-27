@@ -50,4 +50,26 @@ extension HomeViewModel {
 
         return content
     }
+
+// NOTE: Accessible privately since the configuration is very custom to this particular view's needs.
+private extension String {
+    var attributed: NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(
+            string: "• \(self)",
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.black,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .bold),
+            ]
+        )
+
+        attributedString.addAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor.gOrange,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
+            ],
+            range: NSRange(location: 0, length: 1)
+        )
+
+        return attributedString
+    }
 }
