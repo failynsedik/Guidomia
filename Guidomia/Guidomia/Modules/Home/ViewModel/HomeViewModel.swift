@@ -5,7 +5,7 @@
 //  Created by Failyn Kaye Sedik on 1/27/22.
 //
 
-import Foundation
+import UIKit
 
 final class HomeViewModel {
     private let cars: [CarDTO]
@@ -50,6 +50,28 @@ extension HomeViewModel {
 
         return content
     }
+
+    /// Returns a "ready" (meaning, already formatted) model for `CarDetailExpandedCellContent`.
+    func getCarDetailExpandedCellContent(at row: Int) -> CarDetailExpandedCellContent? {
+        guard let car = cars[safe: row],
+              let collapsedContent = getCarDetailCollapsedCellContent(at: row)
+        else { return nil }
+
+        let attributedPros: [NSMutableAttributedString] = car.prosList.filter { !$0.isEmpty }.map(\.attributed)
+        let pros = attributedPros.isEmpty ? [NSMutableAttributedString(string: "None")] : attributedPros
+        let attributedCons: [NSMutableAttributedString] = car.consList.filter { !$0.isEmpty }.map(\.attributed)
+        let cons = attributedCons.isEmpty ? [NSMutableAttributedString(string: "None")] : attributedCons
+
+        let content = CarDetailExpandedCellContent(
+            collapsedContent: collapsedContent,
+            pros: pros,
+            cons: cons,
+            isLastCell: row == cars.count - 1
+        )
+
+        return content
+    }
+}
 
 // NOTE: Accessible privately since the configuration is very custom to this particular view's needs.
 private extension String {
