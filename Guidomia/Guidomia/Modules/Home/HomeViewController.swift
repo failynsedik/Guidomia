@@ -78,12 +78,12 @@ extension HomeViewController: UITableViewDelegate {
         viewModel.expandedCellRow = indexPath.row
 
         tableView.reloadRows(
-			at: [
-				IndexPath(row: previouslyExpandedRow, section: 0),
-				IndexPath(row: viewModel.expandedCellRow, section: 0)
-			],
-			with: .automatic
-		)
+            at: [
+                IndexPath(row: previouslyExpandedRow, section: 0),
+                IndexPath(row: viewModel.expandedCellRow, section: 0),
+            ],
+            with: .automatic
+        )
     }
 
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
@@ -103,7 +103,7 @@ extension HomeViewController: UITableViewDataSource {
             let row = indexPath.row
 
             if viewModel.expandedCellRow == row {
-				// Expanded cell
+                // Expanded cell
                 if let content = viewModel.getCarDetailExpandedCellContent(at: row) {
                     cell.setup(expandedContent: content)
                     return cell
@@ -111,7 +111,7 @@ extension HomeViewController: UITableViewDataSource {
                     return UITableViewCell()
                 }
             } else if let content = viewModel.getCarDetailCollapsedCellContent(at: row) {
-				// Collapsed cell
+                // Collapsed cell
                 cell.setup(collapsedContent: content)
                 return cell
             } else {
