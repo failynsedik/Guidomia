@@ -40,13 +40,28 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
     private func setupNav() {
-        let leftBarButtonItem = UIBarButtonItem(title: "Guidomia", style: .plain, target: nil, action: nil)
-        leftBarButtonItem.tintColor = .white
+        let leftBarButtonItem = UIBarButtonItem(title: "GUIDOMIA", style: .plain, target: nil, action: nil)
+        leftBarButtonItem.setTitleTextAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont(name: "STStencil", size: 24)!,
+            ],
+            for: .disabled
+        )
         navigationItem.leftBarButtonItem = leftBarButtonItem
+        navigationItem.leftBarButtonItem?.isEnabled = false
 
-        let rightBarButtonItem = UIBarButtonItem(title: "⠇", style: .plain, target: nil, action: nil)
+        let rightBarButtonItem = UIBarButtonItem(title: "☰", style: .plain, target: nil, action: nil)
         rightBarButtonItem.tintColor = .white
+        rightBarButtonItem.setTitleTextAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 32, weight: .bold),
+            ],
+            for: .disabled
+        )
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationItem.rightBarButtonItem?.isEnabled = false
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
