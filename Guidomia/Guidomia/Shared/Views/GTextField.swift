@@ -12,10 +12,20 @@ class GTextField: UITextField {
     var rightPadding: CGFloat = 0
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        CGRect(x: bounds.origin.x + leftPadding, y: bounds.origin.y, width: bounds.width - rightPadding * 2, height: bounds.height)
+        CGRect(
+            x: bounds.origin.x + leftPadding,
+            y: bounds.origin.y,
+            width: bounds.width - rightPadding * 2,
+            height: bounds.height
+        )
     }
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        CGRect(x: bounds.origin.x + leftPadding, y: bounds.origin.y, width: bounds.width - rightPadding * 2, height: bounds.height)
+        CGRect(
+            x: bounds.origin.x + leftPadding,
+            y: bounds.origin.y,
+            width: bounds.width - rightPadding * 2,
+            height: bounds.height
+        )
     }
 }
