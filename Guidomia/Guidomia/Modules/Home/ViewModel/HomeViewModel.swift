@@ -77,12 +77,25 @@ extension HomeViewModel {
 // NOTE: Accessible privately since the configuration is very custom to this particular view's needs.
 private extension String {
     var attributed: NSMutableAttributedString {
+        let string = "• \(self)"
         let attributedString = NSMutableAttributedString(
-            string: "• \(self)",
+            string: string,
             attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor.black,
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .bold),
             ]
+        )
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.paragraphSpacing = 4
+        paragraphStyle.paragraphSpacingBefore = 3
+        paragraphStyle.firstLineHeadIndent = 8
+        paragraphStyle.headIndent = 19
+
+        attributedString.addAttribute(
+            NSAttributedString.Key.paragraphStyle,
+            value: paragraphStyle,
+            range: NSRange(location: 0, length: string.count)
         )
 
         attributedString.addAttributes(
