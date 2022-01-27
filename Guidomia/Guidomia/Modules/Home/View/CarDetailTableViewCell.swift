@@ -7,7 +7,7 @@
 
 import SnapKit
 
-class CarDetailTableViewCell: UITableViewCell {
+final class CarDetailTableViewCell: UITableViewCell {
     // MARK: - Subviews
 
     private let carDetailView: CarDetailView = .init()

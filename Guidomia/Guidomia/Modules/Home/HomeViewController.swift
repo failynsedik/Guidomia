@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
         clearView.backgroundColor = .clear
         tableView.tableHeaderView = clearView
         tableView.tableFooterView = clearView
+        tableView.register(CarHeaderTableViewCell.self, forCellReuseIdentifier: CarHeaderTableViewCell.reuseIdentifier)
         tableView.register(CarDetailTableViewCell.self, forCellReuseIdentifier: CarDetailTableViewCell.reuseIdentifier)
         return tableView
     }()
@@ -71,54 +72,82 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Do not proceed if not on the car list section
         // Do not proceed if user clicked the same cell
-        guard indexPath.row != viewModel.expandedCellRow else { return }
+        guard indexPath.section == HomeSection.carList.rawValue,
+              indexPath.row != viewModel.expandedCellRow
+        else { return }
 
         let previouslyExpandedRow = viewModel.expandedCellRow
         viewModel.expandedCellRow = indexPath.row
 
         tableView.reloadRows(
             at: [
-                IndexPath(row: previouslyExpandedRow, section: 0),
-                IndexPath(row: viewModel.expandedCellRow, section: 0),
+                IndexPath(row: previouslyExpandedRow, section: HomeSection.carList.rawValue),
+                IndexPath(row: viewModel.expandedCellRow, section: HomeSection.carList.rawValue),
             ],
             with: .automatic
         )
     }
 
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch HomeSection(rawValue: indexPath.section) {
+        case .header: return 250
+        case .carList: return UITableView.automaticDimension
+        default: return UITableView.automaticDimension
+        }
     }
 }
 
 // MARK: - UITableViewDataSource
 
 extension HomeViewController: UITableViewDataSource {
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        viewModel.numberOfRows()
+    func numberOfSections(in _: UITableView) -> Int {
+        HomeSection.allCases.count
+    }
+
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch HomeSection(rawValue: section) {
+        case .header: return 1
+        case .carList: return viewModel.numberOfRows()
+        default: return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailTableViewCell.reuseIdentifier, for: indexPath) as? CarDetailTableViewCell {
-            let row = indexPath.row
+        switch HomeSection(rawValue: indexPath.section) {
+        case .header:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CarHeaderTableViewCell.reuseIdentifier, for: indexPath) as? CarHeaderTableViewCell {
+                return cell
+            }
 
-            if viewModel.expandedCellRow == row {
-                // Expanded cell
-                if let content = viewModel.getCarDetailExpandedCellContent(at: row) {
-                    cell.setup(expandedContent: content)
+            return UITableViewCell()
+
+        case .carList:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailTableViewCell.reuseIdentifier, for: indexPath) as? CarDetailTableViewCell {
+                let row = indexPath.row
+
+                if viewModel.expandedCellRow == row {
+                    // Expanded cell
+                    if let content = viewModel.getCarDetailExpandedCellContent(at: row) {
+                        cell.setup(expandedContent: content)
+                        return cell
+                    } else {
+                        return UITableViewCell()
+                    }
+                } else if let content = viewModel.getCarDetailCollapsedCellContent(at: row) {
+                    // Collapsed cell
+                    cell.setup(collapsedContent: content)
                     return cell
                 } else {
                     return UITableViewCell()
                 }
-            } else if let content = viewModel.getCarDetailCollapsedCellContent(at: row) {
-                // Collapsed cell
-                cell.setup(collapsedContent: content)
-                return cell
-            } else {
-                return UITableViewCell()
             }
-        }
 
-        return UITableViewCell()
+            return UITableViewCell()
+
+        default:
+            return UITableViewCell()
+        }
     }
 }

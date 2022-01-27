@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum HomeSection: Int, CaseIterable {
+    case header
+    case carList
+}
+
 final class HomeViewModel {
     private let cars: [CarDTO]
     var expandedCellRow: Int = 0
