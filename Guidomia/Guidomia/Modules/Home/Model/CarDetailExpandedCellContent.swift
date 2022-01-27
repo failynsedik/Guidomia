@@ -11,4 +11,5 @@ struct CarDetailExpandedCellContent {
     let collapsedContent: CarDetailCollapsedCellContent
     let pros: [String]
     let cons: [String]
+    let isLastCell: Bool
 }
