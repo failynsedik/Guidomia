@@ -9,7 +9,7 @@ import Foundation
 
 struct CarDetailExpandedCellContent {
     let collapsedContent: CarDetailCollapsedCellContent
-    let pros: [String]
-    let cons: [String]
+    let pros: [NSMutableAttributedString]
+    let cons: [NSMutableAttributedString]
     let isLastCell: Bool
 }
