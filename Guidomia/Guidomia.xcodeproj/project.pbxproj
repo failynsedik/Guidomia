@@ -208,10 +208,10 @@
 		3B94D33927A1E0F400C148EB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3B94D35C27A21A6700C148EB /* Collection+SafeBounds.swift */,
 				3B94D35E27A21C6800C148EB /* Double+RoundOff.swift */,
 				3B94D34B27A1E75600C148EB /* JSONParser.swift */,
 				3B94D34F27A1EB3F00C148EB /* Reusable.swift */,
-				3B94D35C27A21A6700C148EB /* Collection+SafeBounds.swift */,
 				3B94D33A27A1E14F00C148EB /* UIColorExtensions */,
 			);
 			path = Utilities;
