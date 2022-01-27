@@ -25,6 +25,7 @@
 		3B94D34E27A1E8B300C148EB /* CarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D34D27A1E8B300C148EB /* CarDTO.swift */; };
 		3B94D35027A1EB3F00C148EB /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D34F27A1EB3F00C148EB /* Reusable.swift */; };
 		3B94D35D27A21A6700C148EB /* Collection+SafeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D35C27A21A6700C148EB /* Collection+SafeBounds.swift */; };
+		3B94D35F27A21C6800C148EB /* Double+RoundOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D35E27A21C6800C148EB /* Double+RoundOff.swift */; };
 		F3B408D4F76B69F678CF2F00 /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35B7212E4EEC209820D0BC5 /* Pods_Guidomia_GuidomiaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		3B94D34D27A1E8B300C148EB /* CarDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDTO.swift; sourceTree = "<group>"; };
 		3B94D34F27A1EB3F00C148EB /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		3B94D35C27A21A6700C148EB /* Collection+SafeBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeBounds.swift"; sourceTree = "<group>"; };
+		3B94D35E27A21C6800C148EB /* Double+RoundOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+RoundOff.swift"; sourceTree = "<group>"; };
 		6BF172C47C64A57675D76F67 /* Pods-GuidomiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaTests.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB39A45AC688A7C3E289707 /* Pods-Guidomia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidomia.release.xcconfig"; path = "Target Support Files/Pods-Guidomia/Pods-Guidomia.release.xcconfig"; sourceTree = "<group>"; };
 		ACB2A6C8FAAFE6974202045B /* Pods_Guidomia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guidomia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,7 @@
 		3B94D33927A1E0F400C148EB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3B94D35E27A21C6800C148EB /* Double+RoundOff.swift */,
 				3B94D34B27A1E75600C148EB /* JSONParser.swift */,
 				3B94D34F27A1EB3F00C148EB /* Reusable.swift */,
 				3B94D35C27A21A6700C148EB /* Collection+SafeBounds.swift */,
@@ -503,6 +506,7 @@
 				3B94D30627A1DAD000C148EB /* HomeViewController.swift in Sources */,
 				3B94D30227A1DAD000C148EB /* AppDelegate.swift in Sources */,
 				3B94D30427A1DAD000C148EB /* SceneDelegate.swift in Sources */,
+				3B94D35F27A21C6800C148EB /* Double+RoundOff.swift in Sources */,
 				3B94D33C27A1E17500C148EB /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
