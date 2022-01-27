@@ -30,6 +30,7 @@ final class CarFilterView: UIView {
         textField.tintColor = .darkGray
         textField.backgroundColor = .white
         textField.clearButtonMode = .whileEditing
+        textField.returnKeyType = .next
         textField.leftPadding = 16
         textField.rightPadding = 24
         return textField
@@ -47,6 +48,7 @@ final class CarFilterView: UIView {
         textField.tintColor = .darkGray
         textField.backgroundColor = .white
         textField.clearButtonMode = .whileEditing
+        textField.returnKeyType = .done
         textField.leftPadding = 16
         textField.rightPadding = 24
         return textField
@@ -79,6 +81,9 @@ extension CarFilterView {
     private func setupViews() {
         backgroundColor = .gDarkGray
 
+        makeTextField.delegate = self
+        modelTextField.delegate = self
+
         addSubview(titleLabel)
         addSubview(makeTextField)
         addSubview(modelTextField)
@@ -106,4 +111,18 @@ extension CarFilterView {
 
 extension CarFilterView {
     func setup() {}
+}
+
+// MARK: - UITextFieldDelegate
+
+extension CarFilterView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        if textField == makeTextField {
+            modelTextField.becomeFirstResponder()
+        }
+
+        return true
+    }
 }

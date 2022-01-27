@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
         clearView.backgroundColor = .clear
         tableView.tableHeaderView = clearView
         tableView.tableFooterView = clearView
+        tableView.keyboardDismissMode = .interactive
         tableView.register(CarHeaderTableViewCell.self, forCellReuseIdentifier: CarHeaderTableViewCell.reuseIdentifier)
         tableView.register(CarDetailTableViewCell.self, forCellReuseIdentifier: CarDetailTableViewCell.reuseIdentifier)
         return tableView
