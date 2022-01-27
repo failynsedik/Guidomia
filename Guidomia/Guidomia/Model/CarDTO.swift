@@ -9,9 +9,9 @@ import Foundation
 
 struct CarDTO: Decodable {
     let consList: [String]
-    let customerPrice: Int
+    let customerPrice: Double
     let make: String
-    let marketPrice: Int
+    let marketPrice: Double
     let model: String
     let prosList: [String]
     let rating: Int
