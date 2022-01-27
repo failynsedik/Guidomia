@@ -7,7 +7,14 @@
 
 import SnapKit
 
+protocol CarFilterViewDelegate: AnyObject {
+    func didFilterMake(_ carFilterView: CarFilterView, make: String)
+    func didFilterModel(_ carFilterView: CarFilterView, model: String)
+}
+
 final class CarFilterView: UIView {
+    weak var delegate: CarFilterViewDelegate?
+
     // MARK: - Subviews
 
     private let titleLabel: UILabel = {
@@ -83,6 +90,8 @@ extension CarFilterView {
 
         makeTextField.delegate = self
         modelTextField.delegate = self
+        makeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        modelTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         addSubview(titleLabel)
         addSubview(makeTextField)
@@ -124,5 +133,17 @@ extension CarFilterView: UITextFieldDelegate {
         }
 
         return true
+    }
+
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        switch textField {
+        case makeTextField:
+            delegate?.didFilterMake(self, make: textField.text ?? "")
+
+        case modelTextField:
+            delegate?.didFilterModel(self, model: textField.text ?? "")
+
+        default: return
+        }
     }
 }

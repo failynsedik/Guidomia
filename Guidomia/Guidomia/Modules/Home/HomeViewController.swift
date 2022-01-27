@@ -126,7 +126,11 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch HomeSection(rawValue: section) {
         case .header: return UIView()
-        case .carList: return CarFilterTableViewHeaderView()
+        case .carList:
+            let headerView = CarFilterTableViewHeaderView()
+            headerView.carFilterView.delegate = self
+            return headerView
+
         default: return UIView()
         }
     }

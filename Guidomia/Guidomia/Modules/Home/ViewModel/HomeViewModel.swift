@@ -15,10 +15,14 @@ enum HomeSection: Int, CaseIterable {
 final class HomeViewModel {
     private let cars: [CarDTO]
     var expandedCellRow: Int = 0
+    private var filteredCars: [CarDTO] = []
+    private var makeQueryString: String = ""
+    private var modelQueryString: String = ""
 
     init() {
         let cars: [CarDTO] = JSONParser.parse(resource: "car_list", intoType: [CarDTO].self) ?? []
         self.cars = cars
+        filteredCars = cars
     }
 }
 
@@ -26,12 +30,12 @@ final class HomeViewModel {
 
 extension HomeViewModel {
     func numberOfRows() -> Int {
-        cars.count
+        filteredCars.count
     }
 
     /// Returns a "ready" (meaning, already formatted) model for `CarDetailCollapsedCellContent`.
     func getCarDetailCollapsedCellContent(at row: Int) -> CarDetailCollapsedCellContent? {
-        guard let car = cars[safe: row] else { return nil }
+        guard let car = filteredCars[safe: row] else { return nil }
 
         let name = "\(car.make) \(car.model)"
         let imageName = "\(name.split(separator: " ").joined(separator: "_")).jpg"
@@ -44,7 +48,7 @@ extension HomeViewModel {
         }
 
         let rating = starRatings.joined(separator: " ")
-        let isLastCell = row == cars.count - 1
+        let isLastCell = row == filteredCars.count - 1
 
         let content = CarDetailCollapsedCellContent(
             name: name,
@@ -59,7 +63,7 @@ extension HomeViewModel {
 
     /// Returns a "ready" (meaning, already formatted) model for `CarDetailExpandedCellContent`.
     func getCarDetailExpandedCellContent(at row: Int) -> CarDetailExpandedCellContent? {
-        guard let car = cars[safe: row],
+        guard let car = filteredCars[safe: row],
               let collapsedContent = getCarDetailCollapsedCellContent(at: row)
         else { return nil }
 
@@ -72,7 +76,7 @@ extension HomeViewModel {
             collapsedContent: collapsedContent,
             pros: pros,
             cons: cons,
-            isLastCell: row == cars.count - 1
+            isLastCell: row == filteredCars.count - 1
         )
 
         return content
@@ -112,5 +116,45 @@ private extension String {
         )
 
         return attributedString
+    }
+}
+
+// MARK: - Filter
+
+extension HomeViewModel {
+    func didFilterMake(make: String) {
+        makeQueryString = make
+        filterCars()
+    }
+
+    func didFilterModel(model: String) {
+        modelQueryString = model
+        filterCars()
+    }
+
+    func filterCars() {
+        let makeQueryStringIsEmpty = makeQueryString.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let modelQueryStringIsEmpty = modelQueryString.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+
+        if makeQueryStringIsEmpty, modelQueryStringIsEmpty {
+            // Set the original cars array if there are no filters
+            filteredCars = cars
+        } else {
+            // Filter the original cars array and set the result to `filteredCars`
+            if !makeQueryStringIsEmpty, !modelQueryStringIsEmpty {
+                // If both queries/filters are not empty...
+                filteredCars = cars.filter { $0.make.contains(makeQueryString) && $0.model.contains(modelQueryString) }
+            } else if !makeQueryStringIsEmpty, modelQueryStringIsEmpty {
+                // If only make query is not empty...
+                filteredCars = cars.filter { $0.make.contains(makeQueryString) }
+            } else if makeQueryStringIsEmpty, !modelQueryStringIsEmpty {
+                // If only model query is not empty...
+                filteredCars = cars.filter { $0.model.contains(modelQueryString) }
+            } else {
+                // Fallback if both are empty, but this should never happen because
+                // of the above check
+                filteredCars = cars
+            }
+        }
     }
 }

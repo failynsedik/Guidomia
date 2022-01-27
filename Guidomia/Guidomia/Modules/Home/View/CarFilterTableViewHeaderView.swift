@@ -8,7 +8,7 @@
 import SnapKit
 
 final class CarFilterTableViewHeaderView: UITableViewHeaderFooterView {
-    private let carFilterView: CarFilterView = .init()
+    let carFilterView: CarFilterView = .init()
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
