@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeViewModel {
+final class HomeViewModel {
     private let cars: [CarDTO]
 
     init() {
