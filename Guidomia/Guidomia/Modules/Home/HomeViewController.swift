@@ -56,6 +56,7 @@ extension HomeViewController {
     }
 
     private func setupViews() {
+        edgesForExtendedLayout = []
         view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
@@ -95,6 +96,22 @@ extension HomeViewController: UITableViewDelegate {
         case .header: return 250
         case .carList: return UITableView.automaticDimension
         default: return UITableView.automaticDimension
+        }
+    }
+
+    func tableView(_: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch HomeSection(rawValue: section) {
+        case .header: return CGFloat.leastNormalMagnitude // FIX: Space above tableview
+        case .carList: return UITableView.automaticDimension
+        default: return CGFloat.leastNormalMagnitude
+        }
+    }
+
+    func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch HomeSection(rawValue: section) {
+        case .header: return UIView()
+        case .carList: return CarFilterTableViewHeaderView()
+        default: return UIView()
         }
     }
 }

@@ -32,7 +32,9 @@
 		3B94D35F27A21C6800C148EB /* Double+RoundOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D35E27A21C6800C148EB /* Double+RoundOff.swift */; };
 		3B94D36127A22DBB00C148EB /* CarDetailExpandedCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36027A22DBB00C148EB /* CarDetailExpandedCellContent.swift */; };
 		3B94D36327A24F5500C148EB /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36227A24F5500C148EB /* UIStackView+Subviews.swift */; };
+		3B94D36727A2B80C00C148EB /* CarFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36627A2B80C00C148EB /* CarFilterView.swift */; };
 		3B94D36927A2B9C700C148EB /* CarHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36827A2B9C700C148EB /* CarHeaderTableViewCell.swift */; };
+		3BE443F327A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */; };
 		3BE443F527A34041008E0B6E /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F427A34041008E0B6E /* UIView+Shadow.swift */; };
 		3BE443F927A3415D008E0B6E /* GTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F827A3415D008E0B6E /* GTextField.swift */; };
 		F3B408D4F76B69F678CF2F00 /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35B7212E4EEC209820D0BC5 /* Pods_Guidomia_GuidomiaUITests.framework */; };
@@ -86,7 +88,9 @@
 		3B94D35E27A21C6800C148EB /* Double+RoundOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+RoundOff.swift"; sourceTree = "<group>"; };
 		3B94D36027A22DBB00C148EB /* CarDetailExpandedCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailExpandedCellContent.swift; sourceTree = "<group>"; };
 		3B94D36227A24F5500C148EB /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
+		3B94D36627A2B80C00C148EB /* CarFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterView.swift; sourceTree = "<group>"; };
 		3B94D36827A2B9C700C148EB /* CarHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterTableViewHeaderView.swift; sourceTree = "<group>"; };
 		3BE443F427A34041008E0B6E /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		3BE443F827A3415D008E0B6E /* GTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTextField.swift; sourceTree = "<group>"; };
 		6BF172C47C64A57675D76F67 /* Pods-GuidomiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaTests.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				3B94D36827A2B9C700C148EB /* CarHeaderTableViewCell.swift */,
+				3B94D36627A2B80C00C148EB /* CarFilterView.swift */,
+				3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */,
 				3B94D35427A2160600C148EB /* CarDetailView.swift */,
 				3B94D35627A217E600C148EB /* CarDetailTableViewCell.swift */,
 			);
@@ -568,6 +574,7 @@
 				3B94D35727A217E600C148EB /* CarDetailTableViewCell.swift in Sources */,
 				3B94D36127A22DBB00C148EB /* CarDetailExpandedCellContent.swift in Sources */,
 				3B94D33E27A1E19F00C148EB /* UIColor+Palette.swift in Sources */,
+				3BE443F327A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift in Sources */,
 				3BE443F927A3415D008E0B6E /* GTextField.swift in Sources */,
 				3B94D34E27A1E8B300C148EB /* CarDTO.swift in Sources */,
 				3B94D36927A2B9C700C148EB /* CarHeaderTableViewCell.swift in Sources */,
@@ -581,6 +588,7 @@
 				3B94D35B27A2196A00C148EB /* HomeViewModel.swift in Sources */,
 				3B94D30427A1DAD000C148EB /* SceneDelegate.swift in Sources */,
 				3B94D35927A2188000C148EB /* CarDetailCollapsedCellContent.swift in Sources */,
+				3B94D36727A2B80C00C148EB /* CarFilterView.swift in Sources */,
 				3B94D35F27A21C6800C148EB /* Double+RoundOff.swift in Sources */,
 				3B94D35527A2160600C148EB /* CarDetailView.swift in Sources */,
 				3B94D33C27A1E17500C148EB /* UIColor+Hex.swift in Sources */,
