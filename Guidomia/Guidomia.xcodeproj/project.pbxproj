@@ -37,6 +37,7 @@
 		3BE443F327A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */; };
 		3BE443F527A34041008E0B6E /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F427A34041008E0B6E /* UIView+Shadow.swift */; };
 		3BE443F927A3415D008E0B6E /* GTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F827A3415D008E0B6E /* GTextField.swift */; };
+		3BE443FB27A34857008E0B6E /* ST-Stencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BE443FA27A34857008E0B6E /* ST-Stencil.ttf */; };
 		F3B408D4F76B69F678CF2F00 /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35B7212E4EEC209820D0BC5 /* Pods_Guidomia_GuidomiaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterTableViewHeaderView.swift; sourceTree = "<group>"; };
 		3BE443F427A34041008E0B6E /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		3BE443F827A3415D008E0B6E /* GTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTextField.swift; sourceTree = "<group>"; };
+		3BE443FA27A34857008E0B6E /* ST-Stencil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ST-Stencil.ttf"; sourceTree = "<group>"; };
 		6BF172C47C64A57675D76F67 /* Pods-GuidomiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaTests.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB39A45AC688A7C3E289707 /* Pods-Guidomia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidomia.release.xcconfig"; path = "Target Support Files/Pods-Guidomia/Pods-Guidomia.release.xcconfig"; sourceTree = "<group>"; };
 		ACB2A6C8FAAFE6974202045B /* Pods_Guidomia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guidomia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 			children = (
 				3B94D30D27A1DAD100C148EB /* Assets.xcassets */,
 				3B94D30F27A1DAD100C148EB /* LaunchScreen.storyboard */,
+				3BE443FA27A34857008E0B6E /* ST-Stencil.ttf */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				3B94D31127A1DAD100C148EB /* LaunchScreen.storyboard in Resources */,
 				3B94D30E27A1DAD100C148EB /* Assets.xcassets in Resources */,
 				3B94D34A27A1E61200C148EB /* car_list.json in Resources */,
+				3BE443FB27A34857008E0B6E /* ST-Stencil.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
