@@ -12,10 +12,18 @@ enum HomeSection: Int, CaseIterable {
     case carList
 }
 
+enum FilterFieldType {
+    case make
+    case model
+}
+
 final class HomeViewModel {
     private let cars: [CarDTO]
     var expandedCellRow: Int = 0
     private var filteredCars: [CarDTO] = []
+    var activeFilterFieldType: FilterFieldType?
+    private var carMakeList: [String] = []
+    private var carModelList: [String] = []
     private var makeQueryString: String = ""
     private var modelQueryString: String = ""
 
@@ -23,6 +31,8 @@ final class HomeViewModel {
         let cars: [CarDTO] = JSONParser.parse(resource: "car_list", intoType: [CarDTO].self) ?? []
         self.cars = cars
         filteredCars = cars
+        carMakeList = cars.map(\.make)
+        carModelList = cars.map(\.model)
     }
 }
 
@@ -159,5 +169,38 @@ extension HomeViewModel {
 
         // Reset the expanded cell after filtering
         expandedCellRow = 0
+    }
+}
+
+// MARK: - PickerView Data Source
+
+extension HomeViewModel {
+    func pickerViewNumberOfRows() -> Int {
+        switch activeFilterFieldType {
+        case .make: return carMakeList.count
+        case .model: return carModelList.count
+        default: return 0
+        }
+    }
+
+    func pickerViewTitle(for row: Int) -> String {
+        switch activeFilterFieldType {
+        case .make:
+            if let title = carMakeList[safe: row] {
+                return title
+            } else {
+                return ""
+            }
+
+        case .model:
+            if let title = carMakeList[safe: row] {
+                return title
+            } else {
+                return ""
+            }
+
+        default:
+            return ""
+        }
     }
 }

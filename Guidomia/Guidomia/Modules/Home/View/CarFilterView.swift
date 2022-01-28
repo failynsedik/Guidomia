@@ -8,6 +8,8 @@
 import SnapKit
 
 protocol CarFilterViewDelegate: AnyObject {
+    func didTapMakeTextField()
+    func didTapModelTextField()
     func didFilterMake(_ carFilterView: CarFilterView, make: String)
     func didFilterModel(_ carFilterView: CarFilterView, model: String)
 }
@@ -25,7 +27,7 @@ final class CarFilterView: UIView {
         return label
     }()
 
-    private let makeTextField: GTextField = {
+    let makeTextField: GTextField = {
         let textField = GTextField()
         textField.attributedPlaceholder = NSAttributedString(
             string: "Any make",
@@ -43,7 +45,7 @@ final class CarFilterView: UIView {
         return textField
     }()
 
-    private let modelTextField: GTextField = {
+    let modelTextField: GTextField = {
         let textField = GTextField()
         textField.attributedPlaceholder = NSAttributedString(
             string: "Any model",
@@ -143,6 +145,14 @@ extension CarFilterView: UITextFieldDelegate {
         case modelTextField:
             delegate?.didFilterModel(self, model: textField.text ?? "")
 
+        default: return
+        }
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case makeTextField: delegate?.didTapMakeTextField()
+        case modelTextField: delegate?.didTapModelTextField()
         default: return
         }
     }
