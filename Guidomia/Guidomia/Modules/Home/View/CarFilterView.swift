@@ -16,6 +16,7 @@ protocol CarFilterViewDelegate: AnyObject {
 
 final class CarFilterView: UIView {
     weak var delegate: CarFilterViewDelegate?
+    private(set) var viewModel = CarFilterViewModel()
 
     // MARK: - Subviews
 
@@ -27,7 +28,7 @@ final class CarFilterView: UIView {
         return label
     }()
 
-    let makeTextField: GTextField = {
+    private let makeTextField: GTextField = {
         let textField = GTextField()
         textField.attributedPlaceholder = NSAttributedString(
             string: "Any make",
@@ -45,7 +46,7 @@ final class CarFilterView: UIView {
         return textField
     }()
 
-    let modelTextField: GTextField = {
+    private let modelTextField: GTextField = {
         let textField = GTextField()
         textField.attributedPlaceholder = NSAttributedString(
             string: "Any model",
@@ -62,6 +63,8 @@ final class CarFilterView: UIView {
         textField.rightPadding = 24
         return textField
     }()
+
+    private let filterPickerView = UIPickerView()
 
     // MARK: - Lifecycle
 
@@ -94,6 +97,10 @@ extension CarFilterView {
         modelTextField.delegate = self
         makeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         modelTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        makeTextField.inputView = filterPickerView
+        modelTextField.inputView = filterPickerView
+        filterPickerView.delegate = self
+        filterPickerView.dataSource = self
 
         addSubview(titleLabel)
         addSubview(makeTextField)
@@ -118,10 +125,13 @@ extension CarFilterView {
     }
 }
 
-// MARK: - UI Setup
+// MARK: - Setup
 
 extension CarFilterView {
-    func setup() {}
+    func setup(carMakeList: [String], carModelList: [String]) {
+        viewModel.carMakeList = carMakeList
+        viewModel.carModelList = carModelList
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -151,9 +161,52 @@ extension CarFilterView: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
-        case makeTextField: delegate?.didTapMakeTextField()
-        case modelTextField: delegate?.didTapModelTextField()
+        case makeTextField:
+            viewModel.activeFilterFieldType = .make
+
+        case modelTextField:
+            viewModel.activeFilterFieldType = .model
+
         default: return
         }
+    }
+}
+
+// MARK: - UIPickerViewDelegate
+
+extension CarFilterView: UIPickerViewDelegate {
+    func pickerView(_: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
+        viewModel.pickerViewTitle(for: row)
+    }
+
+    func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
+        switch viewModel.activeFilterFieldType {
+        case .make:
+            let make = viewModel.pickerViewTitle(for: row)
+            makeTextField.text = make
+            delegate?.didFilterMake(self, make: make)
+
+        case .model:
+            let model = viewModel.pickerViewTitle(for: row)
+            modelTextField.text = model
+            delegate?.didFilterModel(self, model: model)
+
+        default:
+            return
+        }
+
+        endEditing(true)
+    }
+}
+
+// MARK: - UIPickerViewDataSource
+
+extension CarFilterView: UIPickerViewDataSource {
+    func numberOfComponents(in _: UIPickerView) -> Int {
+        1
+    }
+
+    func pickerView(_: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
+        viewModel.pickerViewNumberOfRows()
     }
 }

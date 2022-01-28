@@ -27,12 +27,6 @@ final class HomeViewController: UIViewController {
         return tableView
     }()
 
-    private let filterPickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.isHidden = true
-        return pickerView
-    }()
-
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
@@ -82,8 +76,6 @@ extension HomeViewController {
         view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
-        filterPickerView.delegate = self
-        filterPickerView.dataSource = self
 
         view.addSubview(tableView)
 

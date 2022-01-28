@@ -34,6 +34,7 @@
 		3B94D36327A24F5500C148EB /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36227A24F5500C148EB /* UIStackView+Subviews.swift */; };
 		3B94D36727A2B80C00C148EB /* CarFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36627A2B80C00C148EB /* CarFilterView.swift */; };
 		3B94D36927A2B9C700C148EB /* CarHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94D36827A2B9C700C148EB /* CarHeaderTableViewCell.swift */; };
+		3BA17ECC27A3727B00BA5104 /* CarFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA17ECB27A3727B00BA5104 /* CarFilterViewModel.swift */; };
 		3BE443F327A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */; };
 		3BE443F527A34041008E0B6E /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F427A34041008E0B6E /* UIView+Shadow.swift */; };
 		3BE443F927A3415D008E0B6E /* GTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE443F827A3415D008E0B6E /* GTextField.swift */; };
@@ -91,6 +92,7 @@
 		3B94D36227A24F5500C148EB /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
 		3B94D36627A2B80C00C148EB /* CarFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterView.swift; sourceTree = "<group>"; };
 		3B94D36827A2B9C700C148EB /* CarHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3BA17ECB27A3727B00BA5104 /* CarFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterViewModel.swift; sourceTree = "<group>"; };
 		3BE443F227A2C13B008E0B6E /* CarFilterTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterTableViewHeaderView.swift; sourceTree = "<group>"; };
 		3BE443F427A34041008E0B6E /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		3BE443F827A3415D008E0B6E /* GTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTextField.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				3B94D35A27A2196A00C148EB /* HomeViewModel.swift */,
+				3BA17ECB27A3727B00BA5104 /* CarFilterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				3BE443F527A34041008E0B6E /* UIView+Shadow.swift in Sources */,
 				3B94D35027A1EB3F00C148EB /* Reusable.swift in Sources */,
 				3B94D35D27A21A6700C148EB /* Collection+SafeBounds.swift in Sources */,
+				3BA17ECC27A3727B00BA5104 /* CarFilterViewModel.swift in Sources */,
 				3B94D34C27A1E75600C148EB /* JSONParser.swift in Sources */,
 				3B94D36327A24F5500C148EB /* UIStackView+Subviews.swift in Sources */,
 				3B94D30627A1DAD000C148EB /* HomeViewController.swift in Sources */,

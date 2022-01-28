@@ -28,3 +28,12 @@ final class CarFilterTableViewHeaderView: UITableViewHeaderFooterView {
         super.init(coder: aDecoder)
     }
 }
+
+// MARK: - Setup
+
+extension CarFilterTableViewHeaderView {
+    func setup(carMakeList: [String], carModelList: [String]) {
+        carFilterView.viewModel.carMakeList = carMakeList
+        carFilterView.viewModel.carModelList = carModelList
+    }
+}
