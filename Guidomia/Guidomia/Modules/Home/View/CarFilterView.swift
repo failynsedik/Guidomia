@@ -62,7 +62,11 @@ final class CarFilterView: UIView {
         return textField
     }()
 
-    private let filterPickerView = UIPickerView()
+    private let filterPickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.backgroundColor = .white
+        return pickerView
+    }()
 
     // MARK: - Lifecycle
 
