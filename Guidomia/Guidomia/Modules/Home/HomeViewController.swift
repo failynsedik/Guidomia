@@ -13,7 +13,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Subview
 
     private let tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .white
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
@@ -21,6 +21,10 @@ final class HomeViewController: UIViewController {
         clearView.backgroundColor = .clear
         tableView.tableHeaderView = clearView
         tableView.tableFooterView = clearView
+        tableView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
         tableView.keyboardDismissMode = .interactive
         tableView.register(CarHeaderTableViewCell.self, forCellReuseIdentifier: CarHeaderTableViewCell.reuseIdentifier)
         tableView.register(CarDetailTableViewCell.self, forCellReuseIdentifier: CarDetailTableViewCell.reuseIdentifier)
@@ -117,7 +121,7 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch HomeSection(rawValue: section) {
-        case .header: return CGFloat.leastNormalMagnitude // FIX: Space above tableview
+        case .header: return CGFloat.leastNormalMagnitude
         case .carList: return UITableView.automaticDimension
         default: return CGFloat.leastNormalMagnitude
         }
@@ -125,14 +129,16 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch HomeSection(rawValue: section) {
-        case .header: return UIView()
+        case .header:
+            return nil
         case .carList:
             let headerView = CarFilterTableViewHeaderView()
             headerView.carFilterView.delegate = self
             headerView.setup(carMakeList: viewModel.carMakeList, carModelList: viewModel.carModelList)
             return headerView
 
-        default: return UIView()
+        default:
+            return nil
         }
     }
 }
