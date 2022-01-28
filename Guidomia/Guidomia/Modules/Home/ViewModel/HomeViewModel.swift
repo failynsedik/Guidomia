@@ -156,5 +156,8 @@ extension HomeViewModel {
                 filteredCars = cars
             }
         }
+
+        // Reset the expanded cell after filtering
+        expandedCellRow = 0
     }
 }
