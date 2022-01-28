@@ -5,6 +5,7 @@
 //  Created by Failyn Kaye Sedik on 1/27/22.
 //
 
+import CoreData
 import UIKit
 
 enum HomeSection: Int, CaseIterable {
@@ -13,20 +14,88 @@ enum HomeSection: Int, CaseIterable {
 }
 
 final class HomeViewModel {
-    private let cars: [CarDTO]
+    private var cars: [Car] = []
     var expandedCellRow: Int = 0
-    private var filteredCars: [CarDTO] = []
+    private var filteredCars: [Car] = []
     var carMakeList: [String] = []
     var carModelList: [String] = []
     private var makeQueryString: String = ""
     private var modelQueryString: String = ""
 
     init() {
-        let cars: [CarDTO] = JSONParser.parse(resource: "car_list", intoType: [CarDTO].self) ?? []
+        let carsFromLocalDB = getCarsFromLocalDB()
+
+        if carsFromLocalDB.isEmpty {
+            let cars: [CarDTO] = JSONParser.parse(resource: "car_list", intoType: [CarDTO].self) ?? []
+            saveCarDataModel(cars)
+        } else {
+            setInitialData(cars: carsFromLocalDB)
+        }
+    }
+
+    private func setInitialData(cars: [Car]) {
         self.cars = cars
         filteredCars = cars
         carMakeList = cars.map(\.make)
         carModelList = cars.map(\.model)
+    }
+}
+
+// MARK: - Core Data
+
+extension HomeViewModel {
+    private func getCarsFromLocalDB() -> [Car] {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Car")
+
+        do {
+            let results: NSArray = try context.fetch(request) as NSArray
+            var cars: [Car] = []
+
+            for result in results {
+                let car = result as! Car
+                cars.append(car)
+            }
+
+            return cars
+        } catch {
+            #if DEBUG
+                print(error)
+            #endif
+
+            return []
+        }
+    }
+
+    private func saveCarDataModel(_ cars: [CarDTO]) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Car", in: context)
+
+        var carDataModelArray: [Car] = []
+
+        for car in cars {
+            let carDataModel = Car(entity: entity!, insertInto: context)
+            carDataModel.consList = car.consList
+            carDataModel.customerPrice = car.customerPrice
+            carDataModel.make = car.make
+            carDataModel.marketPrice = car.marketPrice
+            carDataModel.model = car.model
+            carDataModel.prosList = car.prosList
+            carDataModel.rating = car.rating
+            carDataModelArray.append(carDataModel)
+        }
+
+        setInitialData(cars: carDataModelArray)
+
+        do {
+            try context.save()
+        } catch {
+            #if DEBUG
+                print(error)
+            #endif
+        }
     }
 }
 
