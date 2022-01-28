@@ -129,8 +129,7 @@ extension HomeViewController: UITableViewDelegate {
         case .carList:
             let headerView = CarFilterTableViewHeaderView()
             headerView.carFilterView.delegate = self
-            headerView.carFilterView.makeTextField.inputView = filterPickerView
-            headerView.carFilterView.modelTextField.inputView = filterPickerView
+            headerView.setup(carMakeList: viewModel.carMakeList, carModelList: viewModel.carModelList)
             return headerView
 
         default: return UIView()
@@ -191,44 +190,9 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UIPickerViewDelegate
-
-extension HomeViewController: UIPickerViewDelegate {
-    func pickerView(_: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
-        viewModel.pickerViewTitle(for: row)
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow _: Int, inComponent _: Int) {
-        viewModel.filterCars()
-        pickerView.isHidden = true
-    }
-}
-
-// MARK: - UIPickerViewDataSource
-
-extension HomeViewController: UIPickerViewDataSource {
-    func numberOfComponents(in _: UIPickerView) -> Int {
-        1
-    }
-
-    func pickerView(_: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
-        viewModel.pickerViewNumberOfRows()
-    }
-}
-
 // MARK: - CarFilterViewDelegate
 
 extension HomeViewController: CarFilterViewDelegate {
-    func didTapMakeTextField() {
-        viewModel.activeFilterFieldType = .make
-        filterPickerView.isHidden = false
-    }
-
-    func didTapModelTextField() {
-        viewModel.activeFilterFieldType = .model
-        filterPickerView.isHidden = false
-    }
-
     func didFilterMake(_: CarFilterView, make: String) {
         viewModel.didFilterMake(make: make)
         tableView.reloadData()

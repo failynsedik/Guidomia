@@ -8,8 +8,6 @@
 import SnapKit
 
 protocol CarFilterViewDelegate: AnyObject {
-    func didTapMakeTextField()
-    func didTapModelTextField()
     func didFilterMake(_ carFilterView: CarFilterView, make: String)
     func didFilterModel(_ carFilterView: CarFilterView, model: String)
 }
